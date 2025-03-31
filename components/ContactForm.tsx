@@ -2,14 +2,14 @@ import { sendEmail } from "@/app/contact/actions";
 import Form from "next/form";
 
 // Initial state for the form
-const initValues = {
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
-};
+// const initValues = {
+//   name: "",
+//   email: "",
+//   subject: "",
+//   message: "",
+// };
 
-const initState = { values: initValues };
+// const initState = { values: initValues };
 
 const ContactForm = () => {
   return (

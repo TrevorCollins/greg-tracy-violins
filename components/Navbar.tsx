@@ -20,7 +20,7 @@ const NavBar = () => {
 
   return (
     <nav className="w-full h-40 min-h-40 my-5 sticky top-0 flex justify-between items-end z-50 backdrop-blur-lg">
-      <a
+      <Link
         href="/"
         className="flex gap-5 text-sm tracking-normal uppercase items-center lg:items-end lg:text-lg lg:tracking-widest"
       >
@@ -32,7 +32,7 @@ const NavBar = () => {
           className="max-h-[80%] w-auto"
         />
         <p className="hidden md:block">Pittsburgh, PA</p>
-      </a>
+      </Link>
       <div>
         <button
           data-collapse-toggle="navbar-default"
