@@ -13,6 +13,12 @@
 @theme inline {
   --color-background: rgb(var(--light));
   --color-foreground: rgb(var(--dark));
+  --color-light: rgb(245, 238, 224);
+  --color-dark: rgb(35, 12, 6);
+  --color-yellow: rgb(221, 172, 75);
+  --color-red: rgb(102, 12, 12);
+  --color-orange: rgb(140, 47, 24);
+  --color-brown: rgb(87, 29, 15);
   --font-serif: "Gimlet", serif;
 }
 
@@ -20,8 +26,11 @@
   * {
     @apply !scroll-smooth;
   }
+  html {
+    @apply bg-background text-foreground font-serif;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply h-[100dvh] max-h-[100dvh] relative m-0 p-0 px-[10%] flex flex-col justify-between overflow-hidden;
   }
   button {
     @apply active:outline-none;
@@ -31,5 +40,24 @@
 @layer utilities {
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
+  }
+}
+
+@layer components {
+  .section {
+    @apply h-[calc(100dvh-15.75rem)] max-h-[calc(100dvh-15.75rem)] w-full bg-orange/80 text-light border-8 border-red rounded-4xl p-4 lg:p-8;
+    & p {
+      @apply mb-4 last-of-type:mb-0;
+    }
+  }
+
+  .header {
+    @apply font-bold italic text-xl relative pb-4 mb-4 md:text-2xl lg:text-4xl z-30 backdrop-blur-xl;
+    &:after {
+      @apply content-[""] absolute -left-0.5 right-0 bottom-0 w-[60%] h-1 border-2 border-light rounded-md;
+    }
+  }
+  .content {
+    @apply font-normal text-base/normal w-full h-[calc(100%-5rem)] overflow-auto pr-2 md:text-lg/relaxed lg:text-xl/loose;
   }
 }
